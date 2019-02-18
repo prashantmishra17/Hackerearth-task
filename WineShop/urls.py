@@ -17,8 +17,11 @@ from django.contrib import admin
 from django.urls import path, re_path
 from django.conf.urls import url, include
 from app import views
+from django.views.static import serve
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path('api/(?P<version>(v1|v2))/', include('app.urls')),
+    url(r'', include('app.urls')),
 ]
