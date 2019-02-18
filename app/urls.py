@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
-from app import views
+from .views import Wines
 
 urlpatterns = [
-    url(r'^$', views.wines, name = 'wines'),
+    url(r'wines/', Wines.as_view(), name = 'Wines'),
 ]
